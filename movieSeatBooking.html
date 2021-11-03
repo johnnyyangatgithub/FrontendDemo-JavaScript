@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie seat booking demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/movieSeatBooking.css">
+</head>
+
+<body>
+    <!-- A demostration which implement movie seat booking through native JavaScript.  -->
+    <div id="movie-container">
+        <div id="box-moviearea">
+            <div id="container-header"><p>Click the navigation map below to select a seat, and click the seat again to cancel the selection.</p></div>
+            <div id="movie-screen">
+                <div id="screen">
+                    <p>Movie Screen</p>
+                </div>
+            </div>
+            <div id="seatarea">
+                <dl class="row row1">
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <span>#1</span>
+                </dl>
+
+                <dl class="row row2">
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <span>#2</span>
+                </dl>
+
+                <dl class="row row3">
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <span>#3</span>
+                </dl>
+
+                <dl class="row row4">
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="ys"></div>
+                    </dd>
+                    <dd>
+                        <div class="ys"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <span>#4</span>
+                </dl>
+
+                <dl class="row row5">
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <span>#5</span>
+                </dl>
+
+                <dl class="row row6">
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <span>#6</span>
+                </dl>
+
+                <dl class="row row7">
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <span>#7</span>
+                </dl>
+
+                <dl class="row row8">
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <span>#8</span>
+                </dl>
+
+                <dl class="row row9">
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <dd>
+                        <div class="kx"></div>
+                    </dd>
+                    <span>#9</span>
+                </dl>
+
+
+
+            </div>
+        </div>
+        <div id="box-chooseseat">
+            <div id="box-showcase">
+                <div id="sc-header">
+                    <h3>Choose Seat</h3>
+                </div>
+                <div id="sc-info">
+                    <div id="seat-available">
+                        <div></div><span>Seat available</span>
+                    </div>
+                    <div id="seat-selected">
+                        <div></div><span>Seat selected</span>
+                    </div>
+                    <div id="seat-sold">
+                        <div></div><span>Seat sold</span>
+                    </div>
+                </div>
+                <div id="sc-user">
+                    <p>Ticket outlook:</p>
+                    <ul class="selected">
+                        <!-- create <ul> automatically -->
+                        <!-- <ol>row4 seat3</ol>
+                        <ol>row4 seat3</ol> -->
+                    </ul>
+                </div>
+            </div>
+            <div id="box-checkout">
+                <div id="co-header">
+                    <h3>Check out information: </h3>
+                </div>
+                <div id="showcase-totalprice">
+                    <h3>You have selected</h3>
+                    <p>Seats number: </p>
+                    <p>Total price is: </p>
+                </div>
+                <div id="user-input">
+                    Name: <input type="text" id="username" placeholder="For ticket collection">
+                    Phone: <input type="text" id="userphone" placeholder="For ticket collection">
+                    <button>Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        /*
+            Intro： class---->   ys(sold)  kx(spare)  yx（selected）
+            Functionality：
+            1. Click on an available seat to switch to selected
+            2. Click on selected to switch to idle
+            3. When the available seat is switched to the selected seat, the selected seat number will appear on the right side of the page, x row x column
+            4. When the selected seat is switched to vacant, the corresponding selected seat on the right side of the page disappears
+        */
+
+        //1. Implement that when the user clicks on an available seat, the seat becomes the selected color, if click again, the selected color will be cancelled.
+
+        var seats = document.querySelectorAll('#seatarea .kx');
+        // Set click events for these divs in turn
+        for (var i = 0; i < seats.length; i++) {
+            var s = seats[i];//Get a div tag at a certain position
+            s.onclick = function () {
+                //To determine what its class is，switch 'yx' to 'kx', vice versa.
+                var chooseSeats = document.querySelectorAll('#seatarea .yx');
+                console.log(chooseSeats);
+                // console.log(this);
+
+                var classname = this.getAttribute("class");
+                // console.log(classname);
+                if (classname == 'kx') {
+                    if (chooseSeats.length < 4) {
+                        this.setAttribute('class', 'yx');
+                    } else {
+                        alert("Sorry, Peak hour! You can choose no more than 4 seats.");
+                        return;
+                    }
+                } else if (classname == 'yx') {
+                    this.setAttribute('class', 'kx');
+                }
+
+                // 2 Showcase the number of rows and seats
+                var dl = this.parentElement.parentElement;//Query row number through the ancestor of <dl>
+                var dlClass = dl.getAttribute('class');//Query the class name
+                var line = dlClass.substr(7);//Substring class name to get the number of the row
+
+                //Compare whether it is equal to the currently clicked label to obtain the clicked subscript
+                var divs = document.querySelectorAll(`.row.row${line} .kx,.row.row${line} .yx,.row.row${line} .ys`);
+                // console.log(divs); //At this monment, <divs> is an array containing wach <dd>
+                var number;
+                //Traverse <divs>，find the clicked div and get the subscript.
+                for (var i = 0; i < divs.length; i++) {
+                    if (this == divs[i]) {
+                        number = i + 1;//column number，
+                    }
+                }
+
+                // 3 If it is 'available', turn to 'selected', then put it on the page through create a new <ol>
+                if (this.getAttribute('class') == 'yx') {
+                    var ol = document.createElement('ol');
+                    var ul = document.querySelector('.selected');
+                    //Set the content of <ol>
+                    ol.innerText = `row${line},column${number}`;
+                    //Add an <ol>
+                    ul.appendChild(ol);
+                } else {
+                    //By traversing to determine if the seat currently clicked is the seat itself, delete it
+                    var ols = document.querySelectorAll(".selected ol");
+
+                    for (var i = 0; i < ols.length; i++) {
+                        var olText = ols[i].innerText;
+                        if (olText == `row${line},column${number}`) {
+                            //Delete it
+                            ols[i].parentElement.removeChild(ols[i]);
+                            break;//jump out the loop
+                        }
+                    }
+
+                }
+
+                //Dynamic checkout money.
+                var ticketNum = document.querySelector('.selected').children.length;
+                document.querySelector('#showcase-totalprice p').innerText = `Seats number: ${ticketNum}`;
+                document.querySelector('#showcase-totalprice p:last-child').innerText = `Total price is: $ ${ticketNum*8.99}`;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,251 @@
+body, html{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+h3{
+    margin: 0;
+    font-family:'Times New Roman', Times, serif;
+}
+
+p,span {
+    margin: 0;
+    font-family: cursive;
+}
+
+ul,li,form, dl,dt, dd, div ,ol{ padding: 0px; margin: 0px; }
+
+body #movie-container{
+    height: 550px;
+    width: 1000px;
+    border: 1px solid rgb(219, 219, 219);
+    margin: 15px auto;
+    display: flex;
+    border-radius: 0 0 0 20px;
+}
+
+body #movie-container #box-moviearea {
+    height: 100%;
+    width: 75%;
+}
+
+body #movie-container #box-moviearea #container-header {
+    height: 6%;
+    width: 100%;
+    background-color: rgb(219, 219, 219);
+}
+
+body #movie-container #box-moviearea #movie-screen {
+    width: 100%;
+    height: 20%;
+    perspective: 1000px;
+    position: relative;
+    background-color: #242424;
+    border-radius: 10px 10px 0 0;
+}
+
+body #movie-container #box-moviearea #movie-screen #screen{
+    width: 50%;
+    height: 80%;
+    background-color: white;
+    transform-style: preserve-3d;
+    transform: rotateX(-60deg);
+    box-shadow: 0 15px 20px white;
+    position: absolute;
+    top: 15%;
+    left: 22%;
+    border-radius: 20px;    
+    text-align: center;
+    line-height: 50px;
+}
+
+body #movie-container #box-moviearea #movie-screen #screen p{
+    color: black;
+    font-size: 25px;
+}
+
+body #movie-container #box-moviearea #seatarea {
+    height: 74%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #2e2e2e;
+    border-radius: 0 0 10px 10px;
+}
+
+body #movie-container #box-moviearea #seatarea .row {
+    height: 9%;
+    width: 80%;
+}
+
+body #movie-container #box-moviearea #seatarea dl dd div {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #ccc;
+    border-radius: 10px 10px 0 0;
+    float: left;
+    margin-right: 1px;
+}
+
+body #movie-container #box-moviearea #seatarea dl dd .kx:hover {
+    background-color: rgb(0, 255, 0);
+    cursor: pointer;
+}
+
+body #movie-container #box-moviearea #seatarea dl dd .yx {
+    background-color: green;
+}
+
+body #movie-container #box-moviearea #seatarea dl dd .ys {
+    background-color: red;
+}
+
+body #movie-container #box-moviearea #seatarea dl span {
+    line-height: 25px;
+    margin-left: 10px;
+    font-size: 15px;
+    color: white;
+}
+
+body #movie-container #box-chooseseat {
+    height: 100%;
+    width: 25%;
+    background-color: azure;
+}
+
+body #movie-container #box-chooseseat #box-checkout, body #movie-container #box-chooseseat #box-showcase {
+    height: 50%;
+    width: 100%;
+}
+
+body #movie-container #box-chooseseat #box-showcase #sc-header, body #movie-container #box-chooseseat #box-checkout #co-header {
+    height: 12%;
+    width: 100%;
+    background-color: rgb(160, 160, 160);
+    text-align: center;
+    line-height: 172%;
+}
+
+body #movie-container #box-chooseseat #box-checkout #showcase-totalprice {
+    height: 38%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px dotted black;
+}
+
+body #movie-container #box-chooseseat #box-checkout #showcase-totalprice p, body #movie-container #box-chooseseat #box-showcase #sc-user p {
+    margin: 10px auto;
+}
+
+body #movie-container #box-chooseseat #box-checkout #user-input {
+    height: 50%;
+    width: 100%;
+} 
+
+body #movie-container #box-chooseseat #box-checkout #user-input button {
+    width: 60%;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+    /* line-height: 80px; */
+    color: #747272;
+    font-weight: bold;
+    background-image: linear-gradient(#b3cfa9, #66ed00);
+    box-shadow: 0 10px 0 0 #224e32, 0 10px 10px 0 #000;
+    transform: rotateX(30deg);
+    margin: 2px;
+    border-radius: 20px;
+    transition: all 0.2s;
+    cursor: pointer;
+    margin-left: 20%;
+}
+
+body #movie-container #box-chooseseat #box-checkout #user-input button:active{
+    transform: rotateX(30deg) rotateY(10px);
+    box-shadow: none;
+}
+
+body #movie-container #box-chooseseat #box-checkout #user-input input {
+    margin: 15px 0 0 10px;
+}
+
+body #movie-container #box-chooseseat #box-showcase #sc-info {
+    height: 40%;
+    width: 100%;
+}
+
+body #movie-container #box-chooseseat #box-showcase #sc-user {
+    height: 48%;
+    width: 100%;
+}
+
+body #movie-container #box-chooseseat #box-showcase #sc-user .selected{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+body #movie-container #box-chooseseat #box-showcase #sc-user .selected ol {
+    width: 100px;
+    height: 25px;
+    background: #f47920;
+    text-align: center;
+    color: #fff;
+    float: left;
+    line-height: 23px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+body #movie-container #box-chooseseat #box-showcase #sc-info #seat-available, body #movie-container #box-chooseseat #box-showcase #sc-info #seat-selected, body #movie-container #box-chooseseat #box-showcase #sc-info #seat-sold {
+    height: 30%;
+    width: 100%;
+    position: relative;
+}
+
+body #movie-container #box-chooseseat #box-showcase #sc-info #seat-available div, body #movie-container #box-chooseseat #box-showcase #sc-info #seat-selected div, body #movie-container #box-chooseseat #box-showcase #sc-info #seat-sold div {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    border: 1px solid rgb(219, 219, 219);
+    border-radius: 10px 10px 0 0;
+    top: 20%;
+    left: 10%;
+}
+
+body #movie-container #box-chooseseat #box-showcase #sc-info{
+    border-bottom: 1px dotted black;
+}
+
+body #movie-container #box-chooseseat #box-showcase #sc-info #seat-available div {
+    background-color: white;
+}
+
+body #movie-container #box-chooseseat #box-showcase #sc-info #seat-selected div {
+    background-color: green;
+}
+
+body #movie-container #box-chooseseat #box-showcase #sc-info #seat-sold div {
+    background-color: red;
+}
+
+body #movie-container #box-chooseseat #box-showcase #sc-info #seat-available span, body #movie-container #box-chooseseat #box-showcase #sc-info #seat-selected span, body #movie-container #box-chooseseat #box-showcase #sc-info #seat-sold span {
+    position: absolute;
+    top: 25%;
+    left: 30%;
+
+}
+
+/* body #movie-container #box-checkout #container-headerright {
+    height: 6%;
+    width: 25%;
+    background-color: rgb(139, 139, 139);
+    text-align: center;
+    line-height: 6%;
+} */
