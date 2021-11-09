@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        overflow: hidden;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="dotCanvas"></canvas>
+    <script>
+      //1. Get the canvas and brush
+      var canvas = document.querySelector("#dotCanvas");
+      //2
+      var ctx = canvas.getContext("2d");
+      //Define an array to contain dots
+      var dots = [];
+      //Configure the parameters of dots
+      var dotCount = 100;//The number of dots on screen
+      var dotRadius = 5;//The radius of the dots
+      var lineDistance = 200;//Maximum distance between two points
+      //Define mouse position in advance
+      var mouseX;
+      var mouseY;
+      //The radius of the mouse circle
+      var mouseR = 300;
+      //Setting the width and height in a quick way
+      canvas.width = innerWidth;
+      canvas.height = innerHeight;
+
+     
+
+
+     /* Running*/
+     //1 .create a point
+      for(var i=0;i<dotCount;i++){
+        createOneDot();
+      }
+
+      // 2:Random move
+      //Use timers to keep changing
+      setInterval(() => {
+        //clear canvas
+        ctx.clearRect(0,0,canvas.width,canvas.height);  
+        for(var i=0;i<dots.length;i++){
+          var d = dots[i];
+          //Change the coordinates of the center of the circle, realize movement, and fix the speed
+          move(d);
+          //Draw the current traverse point
+          drawDot(d);
+          //Connection between two point
+          drawLine(d);
+        }
+      }, 20);
+
+      //Set event of mouse movement
+      document.body.addEventListener('mousemove',function(e){
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      })
+
+
+
+
+
+       /*
+      Functionality area
+      */
+     // Generate a point and put it into the array
+     function createOneDot(dot){
+       //Random center coordinates
+        var random_x = parseInt(Math.random() * canvas.width);
+        var random_y = parseInt(Math.random() * canvas.height);
+        //The speed of a random dot, random -1 to 1 x and y axis speeds are independent.
+        var randomArr = [1,-1];
+        var random_speedX = randomArr[parseInt(Math.random()*2)];
+        var random_speedY = randomArr[parseInt(Math.random()*2)];
+        //Random radius:1~10
+        var random_r= 1+parseInt(Math.random()*10);
+        var random_color = `rgb(${parseInt(Math.random()*256)},${parseInt(Math.random()*256)},${parseInt(Math.random()*256)})`
+        //Save the dot information to the object, and put the object into an array
+        var dot = {
+            //Random center coordinates
+            x:random_x,
+            y:random_y,
+            //Random speed
+            speedX:random_speedX,
+            speedY:random_speedY,
+            //Random half radius and color
+            r:random_r,
+            color:random_color
+        };
+        //put int the array
+        dots.push(dot);
+     }
+
+     // draft a dot
+     function drawDot(dot){
+       //Update the new circle center coordinates to the canvas and redraw the points
+         ctx.beginPath();
+         ctx.arc(dot.x,dot.y, dot.r, 0, Math.PI * 2);
+         ctx.closePath();
+         ctx.fillStyle = dot.color;
+        
+         ctx.fill();
+         ctx.stroke();
+     }
+     // Change the center coordinates of a dot to implement movement
+     function move(dot){
+       //Determine whether it is out of bounds, if out of bounds, then speed reverse
+       if(dot.x <=dotRadius ||dot.y <=dotRadius || dot.x >=canvas.width -dotRadius || dot.y >=canvas.height -dotRadius){
+         //speed reverse
+         dot.speedX *=-1;
+         dot.speedY *=-1;
+       }
+       //move
+       dot.x +=dot.speedX;
+       dot.y +=dot.speedY;
+
+
+         
+     }
+
+     // Used to draw a line between two points
+     function drawLine(dot){
+       //Get all other dots, 
+       //determine in turn whether the distance between the two dots is a specified value 
+       //if it is less than, draw a line based on the centre of the two places
+       for(var i=0;i<dots.length;i++){
+         var d = dots[i];
+        // Distance between two-point
+        var num = getDistance(dot,d);
+        //Connect once the distance between every two dots meets the condition
+         if(dots[i]!=dot && num <lineDistance && isInside(d,dot)){
+           ctx.beginPath();
+           ctx.moveTo(dot.x,dot.y);
+           ctx.lineTo(d.x,d.y);
+           ctx.strokeStyle = d.color;
+           ctx.closePath();
+           ctx.stroke();
+         }
+       }
+     }
+     // Returns the distance between two dots
+     function getDistance(dot1,dot2){
+        var x1 = dot1.x;
+        var y1 = dot1.y;
+        var x2 = dot2.x;
+        var y2 = dot2.y;
+        var num = Math.sqrt((x1-x2)*(x1-x2) + (y1-y2)*(y1-y2));
+        //Returns the distance
+        return num;
+     }
+    
+     // Determine whether two dots are located in the specified circle
+     function isInside(dot1,dot2){
+       //The distance between the two points and the centre of the mouse circle is less than the radius of the mouse circle
+       var mouse = {
+         x:mouseX,
+         y:mouseY
+       }
+       var num1 = getDistance(dot1,mouse);
+       var num2 = getDistance(dot2,mouse);
+       if(num1 <mouseR && num2 <mouseR){
+         return true;
+       }else{
+         return false;
+       }
+      
+     }
+
+    </script>
+  </body>
+</html>
